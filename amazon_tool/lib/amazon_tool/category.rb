@@ -14,6 +14,7 @@ class AmazonTool::Category
 
     when "Toys & Games"
       pricing = Nokogiri::HTML(open("https://www.amazon.com/Best-Sellers-Toys-Games/zgbs/toys-and-games/"))
+      binding.pry
       prices = pricing.search('span.p13n-sc-price')
       if item.index == 0
         return prices[0].text
